@@ -694,8 +694,8 @@
               </div>
             </div>
             <div class="col-12 col-lg-8">
-              <div class="row mt-5 mt-lg-0">
-                <div class="col-12 col-md-6 res-margin">
+              <div class="row mt-5 mt-lg-0 reviews-rows">
+                <div class="col-12 col-md-6 res-margin ">
                   <!-- Single Review -->
                   <div class="single-review bg-inherit p-5">
                     <!-- Review Content -->
@@ -872,6 +872,7 @@
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -1238,5 +1239,27 @@
 
     <!-- Active js -->
     <script src="assets/js/active.js"></script>
+    
+    <script>
+      // automatic testimonial scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the reviews container
+      const reviewsContainer = document.querySelector('.reviews-rows');
+  
+      // Function to move reviews left to right and right to left
+      function moveReviews() {
+        // Scroll the container to the right by the width of one review
+        reviewsContainer.scrollLeft += reviewsContainer.offsetWidth;
+        if (reviewsContainer.scrollLeft >= (reviewsContainer.scrollWidth - reviewsContainer.offsetWidth)) {
+        reviewsContainer.scrollLeft = 0;
+      }
+      }
+  
+      // Automatically move reviews every 5 seconds
+      setInterval(moveReviews, 2000);
+    });
+  </script>
+  
+    
   </body>
 </html>

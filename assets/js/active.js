@@ -35,6 +35,7 @@
             }, 3000);
         }
     });
+    
 
     // :: 2.0 NAVIGATION MENU ACTIVE CODE
     jQuery(function($) {

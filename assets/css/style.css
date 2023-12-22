@@ -2288,7 +2288,27 @@ body.dark,
 /* ******************************
 :: 16.0 REVIEWS AREA CSS
 ****************************** */
-
+@media (max-width: 767px) {
+    .reviews-rows {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+        flex-wrap: nowrap; /* Prevent wrapping to the next line */
+        margin-left: -50px;
+        scroll-behavior: smooth;
+    }
+    
+      .single-review {
+        flex: 0 0 auto; /* Don't allow the reviews to grow or shrink */
+        width: 100%; /* Each review takes the full width of the container */
+        
+      }
+    
+      /* Optional: Hide horizontal scrollbar */
+      .reviews-rows::-webkit-scrollbar {
+        display: none;
+      }
+}
 .single-review {
     position: relative;
     background-color: #f4f4f4;
@@ -2301,6 +2321,7 @@ body.dark,
     transition: background-color, transform 0.3s ease-in-out 0s;
     transition: background-color, transform 0.3s ease-in-out 0s, -webkit-transform 0.3s ease-in-out 0s;
     z-index: 1;
+   
 }
 
 .owl-item.active.center .single-review {
