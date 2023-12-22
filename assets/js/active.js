@@ -22,19 +22,7 @@
     var $window = $(window);
     var zero = 0;
 
-    // :: 1.0 PRELOADER ACTIVE CODE
-    $(window).on("load", function() {
-        $("#digimax-preloader").addClass("loaded");
     
-        if ($("#digimax-preloader").hasClass("loaded")) {
-            // Display the preloader for 5 seconds (5000 milliseconds)
-            setTimeout(function() {
-                $("#preloader").fadeOut(500, function() {
-                    $(this).remove();
-                });
-            }, 3000);
-        }
-    });
     
 
     // :: 2.0 NAVIGATION MENU ACTIVE CODE
