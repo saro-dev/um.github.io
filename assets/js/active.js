@@ -22,7 +22,16 @@
     var $window = $(window);
     var zero = 0;
 
-    
+    $(document).ready(function() {
+        var preloader = $('.digimax-preloader');
+  
+        // Adjust the duration in milliseconds (e.g., 3000 for 3 seconds)
+        var preloaderDuration = 3000;
+  
+        setTimeout(function() {
+          preloader.addClass('loaded');
+        }, preloaderDuration);
+      });
     
 
     // :: 2.0 NAVIGATION MENU ACTIVE CODE
@@ -57,7 +66,7 @@
             var children = $(this).children('.nav-link');
             children.addClass('prevent');
         })
-
+       
         $(document).on('click', '#menu .nav-item .nav-link', function(e) {
 
             if ($(this).hasClass('prevent')) {
