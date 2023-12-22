@@ -25,11 +25,14 @@
     // :: 1.0 PRELOADER ACTIVE CODE
     $(window).on("load", function() {
         $("#digimax-preloader").addClass("loaded");
-
+    
         if ($("#digimax-preloader").hasClass("loaded")) {
-            $("#preloader").delay(900).queue(function() {
-                $(this).remove();
-            });
+            // Display the preloader for 5 seconds (5000 milliseconds)
+            setTimeout(function() {
+                $("#preloader").fadeOut(500, function() {
+                    $(this).remove();
+                });
+            }, 3000);
         }
     });
 

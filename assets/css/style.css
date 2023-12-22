@@ -593,7 +593,7 @@ img {
 .overlay-dark::after {
     background-color: rgba(16, 16, 45, 1);
     opacity: 0.95;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; */
     z-index: -1;
 }
 
@@ -796,7 +796,7 @@ img {
     border-top-color: #000000;
     border-radius: 50%;
     -webkit-animation: spinner 1s infinite linear;
-    animation: spinner 1s infinite linear;
+    animation: spinner 5s infinite linear;
 }
 
 .preloader-animation .loader {
@@ -822,8 +822,9 @@ img {
     opacity: 0;
     -webkit-transform: rotateY(-90deg);
     transform: rotateY(-90deg);
-    -webkit-animation: animated-letters 4s infinite;
-    animation: animated-letters 4s infinite;
+    -webkit-animation: animated-letters 5s infinite;
+    animation: animated-letters 5s infinite;
+    
 }
 
 .loader .animated-letters:nth-child(2):before {
@@ -859,6 +860,31 @@ img {
 .loader .animated-letters:nth-child(8):before {
     -webkit-animation-delay: 1.4s;
     animation-delay: 1.4s;
+}
+.loader .animated-letters:nth-child(9):before {
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+.loader .animated-letters:nth-child(10):before {
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+.loader .animated-letters:nth-child(11):before {
+    -webkit-animation-delay: 2.0s;
+    animation-delay: 2.0s;
+}
+.loader .animated-letters:nth-child(12):before {
+    -webkit-animation-delay: 2.2s;
+    animation-delay: 2.2s;
+}
+
+.loader .animated-letters:nth-child(13):before {
+    -webkit-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+}
+.loader .animated-letters:nth-child(14):before {
+    -webkit-animation-delay: 2.6s;
+    animation-delay: 2.6s;
 }
 
 .digimax-preloader p {
@@ -961,7 +987,7 @@ img {
         width: 7em;
     }
     .preloader-animation .loader {
-        font: bold 2em "Poppins", sans-serif;
+        font: bold 1.5em "Poppins", sans-serif;
     }
 }
 
@@ -1266,7 +1292,7 @@ header {
 
 .welcome-area {
     height: 800px;
-    z-index: 1;
+    z-index: 8;
 }
 
 .welcome-intro h1 {
@@ -1274,6 +1300,7 @@ header {
     font-weight: 700;
     line-height: 1em;
     letter-spacing: -1.6px;
+    z-index: 8;
 }
 
 .welcome-intro p {
