@@ -1052,7 +1052,13 @@ header {
         width: 60px !important;
     }
     .welcome-intro{
-        margin-top: 30px !important;
+        margin-top: 80px !important;
+    }
+    .container{
+        padding-bottom: 80px;
+    }
+    .images{
+        margin-top: 60px;
     }
 }
 
