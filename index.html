@@ -1164,44 +1164,44 @@
       <!--====== Modal Search Area Start ======-->
       <div id="search" class="modal fade p-0">
         <div class="modal-dialog dialog-animated">
-          <div class="modal-content h-100">
-            <div class="modal-header" data-dismiss="modal">
-              Search <i class="far fa-times-circle icon-close"></i>
-            </div>
-            <div class="modal-body">
-              <form class="row">
-                <div class="col-12 align-self-center">
-                  <div class="row">
-                    <div class="col-12 pb-3">
-                      <h2 class="search-title mb-3">
-                        What are you looking for?
-                      </h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Praesent diam lacus, dapibus sed imperdiet consectetur.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 input-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter your keywords"
-                      />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 input-group align-self-center">
-                      <button class="btn btn-bordered mt-3">Search</button>
-                    </div>
-                  </div>
+            <div class="modal-content h-100">
+                <div class="modal-header" data-dismiss="modal">
+                    Search <i class="far fa-times-circle icon-close"></i>
                 </div>
-              </form>
+                <div class="modal-body">
+                    <form class="row">
+                        <div class="col-12 align-self-center">
+                            <div class="row">
+                                <div class="col-12 pb-3">
+                                    <h2 class="search-title mb-3">
+                                        What are you looking for?
+                                    </h2>
+                                  <p>
+                                      <span style="font-weight: bold;color:black;">Search for Any Keywords</span> For quick access, enter keywords related to what you're looking for.
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 input-group">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Enter your keywords"
+                                        id="searchInput" 
+                                    />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 input-group align-self-center">
+                                    <button class="btn btn-bordered mt-3" id="searchButton">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
       <!--====== Modal Search Area End ======-->
 
       <!--====== Modal Responsive Menu Area Start ======-->
@@ -1258,6 +1258,60 @@
     
   </script>
   
-    
+  <script>
+    $(document).ready(function () {
+        // Function to handle search
+        function handleSearch() {
+            // Get the entered keywords
+            var keywords = $('#searchInput').val().toLowerCase();
+
+            // Check if keywords are not empty
+            if (keywords.trim() !== '') {
+                // Remove previous highlights
+                $('.highlight').contents().unwrap();
+
+                // Loop through elements to check for a match
+                $('body').find('*').contents().each(function () {
+                    if (this.nodeType === 3) { // Text node
+                        var content = this.nodeValue.toLowerCase();
+
+                        // If a match is found, wrap the matched word with a span and scroll to it
+                        if (content.includes(keywords)) {
+                            var words = content.split(' ');
+                            for (var i = 0; i < words.length; i++) {
+                                if (words[i].includes(keywords)) {
+                                    words[i] = '<span class="highlight">' + words[i] + '</span>';
+                                }
+                            }
+
+                            $(this).replaceWith(words.join(' '));
+                            $('html, body').animate({
+                                scrollTop: $('.highlight:first').offset().top - 100 // Adjust the offset as needed
+                            }, 500);
+
+                            // Close the modal
+                            $('#search').modal('hide');
+                            setTimeout(function () {
+                                $('.highlight').contents().unwrap();
+                            }, 5000);
+                        }
+                    }
+                });
+            }
+
+            // Clear the search input
+            $('#searchInput').val('');
+        }
+
+        // Trigger search on button click
+        $('#searchButton').on('click', function (event) {
+            event.preventDefault();
+            handleSearch();
+        });
+    });
+</script>
+
+
+
   </body>
 </html>
