@@ -923,7 +923,8 @@
                 <!-- Contact Form -->
                 <form
                   id="contact-form"
-                  
+                  method="POST"
+                  action="https://formspree.io/f/xqkrzwaa"
                 >
                   <div class="row">
                     <div class="col-12">
@@ -978,7 +979,6 @@
                       <button
                         type="submit"
                         class="btn btn-bordered active btn-block mt-3"
-                        onclick="submitForm()"
                       >
                         <span class="text-white pr-3"
                           ><i class="fas fa-paper-plane"></i></span
@@ -1236,32 +1236,7 @@
 
     <!-- Active js -->
     <script src="assets/js/active.js"></script>
-    <script>
-      function submitForm() {
-    var formData = new FormData(document.getElementById('contact-form'));
-
-    fetch('http://localhost:5501/assets/php/mail.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok. Status: ' + response.status);
-        }
-        return response.text();
-    })
-    .then(data => {
-        console.log(data); // Log the response from the server
-        alert('Message sent successfully.');
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-        alert('Error sending message. Please try again later.');
-    });
-}
-
-  </script>
-  
+    
     <script>
       // automatic testimonial scroll
     document.addEventListener("DOMContentLoaded", function() {
