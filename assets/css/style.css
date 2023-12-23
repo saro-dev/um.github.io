@@ -886,6 +886,10 @@ img {
     -webkit-animation-delay: 2.6s;
     animation-delay: 2.6s;
 }
+.loader .animated-letters:nth-child(15):before {
+    -webkit-animation-delay: 2.8s;
+    animation-delay: 2.8s;
+}
 
 .digimax-preloader p {
     font-family: "Poppins", sans-serif;
@@ -1038,12 +1042,14 @@ header {
 
 .navbar-sticky {
     top: 0;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.3); /* Aqua color with transparency */
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
-    -webkit-transition: all .15s ease-out 0s !important;
-    transition: all .15s ease-out 0s !important;
+    -webkit-transition: all 0.15s ease-out 0s !important;
+    transition: all 0.15s ease-out 0s !important;
+    backdrop-filter: blur(10px); /* Adjust the blur as needed */
 }
+
 
 .navbar-sticky.hidden {
     -webkit-transform: translate3d(0, -101%, 0) !important;
@@ -1302,7 +1308,7 @@ header {
     font-weight: 700;
     line-height: 1em;
     letter-spacing: -1.6px;
-    z-index: 8;
+    z-index: 999 !important; /* Increase the z-index */
 }
 
 .welcome-intro p {
@@ -1336,6 +1342,7 @@ header {
 .welcome-thumb-4 {
     top: 94%;
     right: 0;
+    z-index: 8;
 }
 
 .welcome-thumb-5 {
@@ -1468,7 +1475,7 @@ header {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    z-index: 1;
+    z-index: -1;
 }
 
 .homepage-3 .welcome-thumb {
@@ -1485,6 +1492,7 @@ header {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    z-index: -1;
 }
 
 /* ******************************
