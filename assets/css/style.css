@@ -1047,6 +1047,11 @@ header {
     position: relative;
     z-index: 999;
 }
+@media (max-width: 767px) {
+    .logoo{
+        width: 60px !important;
+    }
+}
 
 .navbar-sticky {
     top: 0;
