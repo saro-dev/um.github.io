@@ -1051,6 +1051,9 @@ header {
     .logoo{
         width: 60px !important;
     }
+    .welcome-intro{
+        margin-top: 30px !important;
+    }
 }
 
 .navbar-sticky {
